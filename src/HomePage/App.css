@@ -1,0 +1,5 @@
+.welcome-text {
+  background: linear-gradient(90deg, rgba(0,31,48,1) 0%, rgba(18,1,66,1) 50%, rgba(0,0,0,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
