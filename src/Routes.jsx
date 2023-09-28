@@ -31,7 +31,7 @@ function Routes() {
     return (
         <Router>
             <Navbar setActiveCart={setActiveCart} activeCart={activeCart} cart={cart}/>
-            <AnimatedRoutes products={products} setCart={setCart} cart={cart}/>
+            <AnimatedRoutes products={products} setCart={setCart} cart={cart} loadProducts={loadProducts}/>
             <Footer />
         </Router>
     )

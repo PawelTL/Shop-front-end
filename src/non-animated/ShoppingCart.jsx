@@ -4,19 +4,18 @@ import Card from '../Card'
 import { Link } from 'react-router-dom'
 import CartCard from './CartCard';
 
-function ShoppingCart({ activeCart, cart }) {
+function ShoppingCart({ activeCart, cart, }) {
 const [total, setTotal] = useState(0);
 
 const updateTotal = () => {
     let prices  = 0;
     cart.map((product) => {
         prices += product.price * product.quantity;
-        console.log(product.quantity)
     })
   setTotal(prices)
-
-  useEffect(() => updateTotal(), [cart])
 }
+
+useEffect(() => updateTotal(), [cart])
 
     return (
         <AnimatePresence mode='wait'>
