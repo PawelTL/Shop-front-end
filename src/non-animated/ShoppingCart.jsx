@@ -9,7 +9,7 @@ useEffect(() => updateTotal(), [cart])
 
     return (
         <AnimatePresence mode='wait'>
-            {activeCart && <motion.div key="ShoppingModal" className='h-[91vh] absolute right-0 top-[9vh] bg-slate-50 w-[15vw] border-l-4 border-black flex flex-col gap-2 items-center p-5 overflow-x-hidden' initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} exit={{ scaleX: 0 }} style={{ transformOrigin: "right" }}>
+            {activeCart && <motion.div key="ShoppingModal" className='h-[91vh] absolute right-0 top-[9vh] bg-slate-100 w-[15vw] border-l-4 border-black flex flex-col gap-2 items-center p-5 overflow-x-hidden overflow-y-auto' initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} exit={{ scaleX: 0 }} style={{ transformOrigin: "right" }}>
                 {cart.length > 0 ? cart.map((product) => (
                         <CartCard product={product} updateTotal={updateTotal} cart={cart}/>
                 )) : <h1 className='text-2xl '>The cart is empty</h1>}

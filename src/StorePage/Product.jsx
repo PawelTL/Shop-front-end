@@ -1,20 +1,13 @@
-import { React, useState } from 'react'
-import { useLocation } from 'react-router-dom'
-import { motion } from 'framer-motion';
+import { React, useState, useContext } from 'react'
+import { Route, useLocation } from 'react-router-dom'
+import { motion } from 'framer-motion'; 
+import { CartContext } from '../Routes';
 
 
 function Product({ setCart, products, cart, updateTotal }) {
     const { state } = useLocation();
+    const { addToCart } = useContext(CartContext);
 
-    const addToCart = (state) => {
-        if (!cart.find(p => p.id === state.id)) {
-            setCart([...cart, state])
-        }
-        else {let target = cart.find(p => p.id === state.id)
-             target.quantity = Number(target.quantity) + 1;
-             updateTotal()
-        }
-    }
 
     return (
         <motion.div

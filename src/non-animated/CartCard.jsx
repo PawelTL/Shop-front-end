@@ -31,7 +31,7 @@ function CartCard({ product, updateTotal, cart }) {
     return (
         <>
 
-            <div key={product.id} className='card-wrapper w-[12vw] h-[9vw] bg-white border-4 border-slate-900 relative overflow-hidden rounded-xl flex flex-wrap'>
+            <div key={product.id} className='card-wrapper w-[12vw] h-[9vw] bg-white shadow-md relative overflow-hidden rounded-xl flex flex-wrap  flex-shrink-0'>
                 <Link className='w-[40%] p-1' state={product} to={`/store/${product.id}`}><img src={product.image} /></Link>
                 <div className=' left-0 h-[100%] w-[60%] bg-slate-50 p-2 relative borcer-b-2 border-black'>
                     <h1 className='text-base font-semibold h-[60%] overflow-clip'>{product.title}</h1>

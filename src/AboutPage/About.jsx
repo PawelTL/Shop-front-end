@@ -7,12 +7,13 @@ function About() {
 
     return (
         <motion.div
-        className='bg-slate-600 w-screen h-[50vh]'
+        className='bg-white w-screen mt-[9vh] flex flex-col items-center justify-center gap-10 text-5xl font-semibold h-[91vh] pb-[7vh]'
         initial={{ width: 0 }} 
         animate={{ width: "100vw" }} 
         exit={{ x: window.innerWidth, transition: {duration: 0.1}}}>
-    
-          <h1 className='text-4xl m-20'>About</h1>
+          <h1>Welcome to StoreName</h1>
+          <h2>This is a fictional store, and none of the products actually exist.</h2>
+          <h2>The Products were taken from the Fake Store API</h2>
         </motion.div>
     )
 }
