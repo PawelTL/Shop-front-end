@@ -6,7 +6,7 @@ import About from './AboutPage/About.jsx'
 import Product from './StorePage/Product.jsx'
 import { AnimatePresence } from 'framer-motion'
 
-function AnimatedRoutes({products, setCart, cart, loadProducts}) {
+function AnimatedRoutes({products, setCart, cart, loadProducts, updateTotal}) {
     const location = useLocation();
     
     return (
@@ -15,7 +15,7 @@ function AnimatedRoutes({products, setCart, cart, loadProducts}) {
                 <Route path="/" element={<App  products={products}/>}/>
                 <Route path="/store" element={<Store products={products} loadProducts={loadProducts}/>} />
                 <Route path="/about" element={<About />} />
-                <Route path='/store/:id' element={<Product setCart={setCart} products={products} cart={cart}/>}/>
+                <Route path='/store/:id' element={<Product setCart={setCart} products={products} cart={cart} updateTotal={updateTotal}/>}/>
             </Routes>
         </AnimatePresence>
     )

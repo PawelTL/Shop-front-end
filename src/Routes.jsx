@@ -12,6 +12,15 @@ function Routes() {
     const [products, setProducts] = useState([])
     const [cart, setCart] = useState([]);
     const [activeCart, setActiveCart] = useState(false);
+    const [total, setTotal] = useState(0);
+
+const updateTotal = () => {
+    let prices  = 0;
+    cart.map((product) => {
+        prices += product.price * product.quantity;
+    })
+  setTotal(prices)
+}
     
     
 
@@ -30,8 +39,8 @@ function Routes() {
 
     return (
         <Router>
-            <Navbar setActiveCart={setActiveCart} activeCart={activeCart} cart={cart}/>
-            <AnimatedRoutes products={products} setCart={setCart} cart={cart} loadProducts={loadProducts}/>
+            <Navbar setActiveCart={setActiveCart} activeCart={activeCart} cart={cart} total={total} updateTotal={updateTotal}/>
+            <AnimatedRoutes products={products} setCart={setCart} cart={cart} loadProducts={loadProducts} updateTotal={updateTotal}/>
             <Footer />
         </Router>
     )
