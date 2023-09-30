@@ -56,7 +56,7 @@ function Routes() {
     <Router>
       <CartContext.Provider value={{addToCart: addToCart, products: products}}>
         <Navbar setActiveCart={setActiveCart} activeCart={activeCart} cart={cart} total={total} updateTotal={updateTotal} />
-        <AnimatedRoutes products={products} setCart={setCart} cart={cart} loadProducts={loadProducts} updateTotal={updateTotal} />
+        <AnimatedRoutes products={products} setCart={setCart} cart={cart} loadProducts={loadProducts} updateTotal={updateTotal} total={total}/>
         <Footer />
       </CartContext.Provider>
     </Router>

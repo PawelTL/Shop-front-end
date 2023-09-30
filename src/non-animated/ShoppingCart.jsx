@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import CartCard from './CartCard';
+import { Link } from 'react-router-dom';
 
 function ShoppingCart({ activeCart, cart, total, updateTotal }) {
 
@@ -14,7 +15,7 @@ useEffect(() => updateTotal(), [cart])
                         <CartCard product={product} updateTotal={updateTotal} cart={cart}/>
                 )) : <h1 className='text-2xl '>The cart is empty</h1>}
                 <h1>Total: ${total.toFixed(2)}</h1>
-                <button type='button' className='w-[80%] relative my-5 bg-green-700 p-2 rounded-2xl border-4 border-green-950'>Checkout</button>
+                <Link to={"/checkout"}><button type='button' className='relative p-2 my-5 bg-green-700 border-4 rounded-2xl border-green-950'>Checkout</button></Link>
             </motion.div>}
         </AnimatePresence>
     )

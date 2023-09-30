@@ -24,7 +24,6 @@ function CartCard({ product, updateTotal, cart }) {
     const removeItem = () => {
         let index = cart.findIndex((e) => e.id == product.id)
         cart.splice(index, 1)
-        console.log(cart)
         updateTotal();
     }
 
@@ -39,9 +38,9 @@ function CartCard({ product, updateTotal, cart }) {
                 <div>
                     <h1 className='absolute text-2xl font-bold text-green-500 bottom-2 left-2'>{product.price}$</h1>
                     <div className='flex absolute bottom-1 right-[20%] justify-center border-2 border-black'>
-                        <button type='button' onClick={decrementQuantity} className='w-[25px] flex justify-center items-center'>-</button>
+                        <button type='button' onClick={decrementQuantity} className='w-[25px] flex justify-center items-center font-bold'>-</button>
                         <input onChange={handleInput} value={product.quantity} type="text" className='bottom-1 bg-slate-200 w-[30px] flex justify-center text-center text-base' />
-                        <button type='button' onClick={incrementQuantity} className='w-[25px] flex justify-center items-center'>+</button>
+                        <button type='button' onClick={incrementQuantity} className='w-[25px] flex justify-center items-center font-bold'>+</button>
                     </div>
                     <div onClick={removeItem} className='flex absolute bottom-2 right-2 justify-center items-center text-red-600 w-[28px] h-[28px] cursor-pointer'>
                         <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSytXS3HjhcRPoqgcrgKGUw9xvt41Z7u4X89Q&usqp=CAU'/>
