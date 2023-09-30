@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-function CheckoutCard({ product, updateTotal }) {
+function CheckoutCard({ product, updateTotal, cart }) {
 
     const incrementQuantity = () => {
         product.quantity += 1;
@@ -25,14 +25,14 @@ function CheckoutCard({ product, updateTotal }) {
 
     return (
 
-        <div className='card-wrapper w-[40vw] shadow-md min-h-[10vw] bg-white relative overflow-hidden rounded-xl flex flex-row'>
-            <Link className='flex' to={`/store/${product.id}`} state={{ product: product }}>
-                <img src={product.image} className='w-[12vw] px-4 py-2 mx-auto' />
+        <div className='card-wrapper shadow-md min-h-[200px] bg-white relative overflow-hidden rounded-xl flex flex-row'>
+            <Link className='flex w-[40%] min-w-[120px] ' to={`/store/${product.id}`} state={{ product: product }}>
+                <img src={product.image} className='px-4 py-2 mx-auto max-h-[50vh] object-contain' />
             </Link>
-            <div className='flex flex-col items-center justify-between w-full p-5 text-center bg-white '>
-                <h1 className='w-full text-2xl font-semibold'>{product.title}</h1>
+            <div className='flex flex-col items-center justify-between w-full p-2 text-center bg-white '>
+                <h1 className='w-full text-lg font-semibold sm:text-2xl'>{product.title}</h1>
                 <div>
-                    <div className='flex bottom-1 gap-4 right-[20%] justify-center mb-1'>
+                    <div className='flex bottom-1 gap-4 right-[20%] w-[130px] justify-center mb-1'>
                         <div className='flex w-[60%] border-2 border-black '>
                             <button type='button' onClick={decrementQuantity} className='w-[40%] flex justify-center items-center font-bold'>-</button>
                             <input onChange={handleInput} value={product.quantity} type="text" className='bottom-1 bg-slate-200 w-[30px] flex justify-center text-center text-base' />
@@ -43,7 +43,7 @@ function CheckoutCard({ product, updateTotal }) {
                             <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSytXS3HjhcRPoqgcrgKGUw9xvt41Z7u4X89Q&usqp=CAU' />
                         </div>
                     </div>
-                    <h1 className='text-5xl font-bold text-green-500'>{(product.price * product.quantity).toFixed(2)}$</h1>
+                    <h1 className='text-3xl font-bold text-green-500 sm:text-4xl md:text-5xl'>{(product.price * product.quantity).toFixed(2)}$</h1>
                 </div>
             </div>
 

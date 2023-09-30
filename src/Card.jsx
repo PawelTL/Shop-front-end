@@ -8,7 +8,7 @@ function Card({ title, price, image, id, description }) {
 
     return (
 
-        <div className='card-wrapper w-[18vw] shadow-md hover:shadow-2xl hover:-translate-y-2 duration-300 h-[18vw] bg-white relative overflow-hidden rounded-xl'>
+        <div className='card-wrapper w-[18vw] min-w-[250px] min-h-[300px] m-1 shadow-md hover:shadow-2xl hover:-translate-y-2 duration-300 h-[18vw] bg-white relative overflow-hidden rounded-xl'>
             <Link className='' to={`/store/${id}`} state={{ title, price, image, id, description }}>
                 <img src={image} className='h-[50%] px-4 py-2 mx-auto' />
 

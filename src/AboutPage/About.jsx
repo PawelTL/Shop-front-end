@@ -7,7 +7,7 @@ function About() {
 
     return (
         <motion.div
-        className='bg-white w-screen mt-[9vh] flex flex-col items-center justify-center gap-10 text-5xl font-semibold h-[91vh] pb-[7vh]'
+        className='bg-white w-screen mt-[9vh] flex flex-col items-center justify-center text-center gap-10 text-2xl md:text-5xl font-semibold h-[91vh] pb-[7vh] px-3'
         initial={{ width: 0 }} 
         animate={{ width: "100vw" }} 
         exit={{ x: window.innerWidth, transition: {duration: 0.1}}}>
