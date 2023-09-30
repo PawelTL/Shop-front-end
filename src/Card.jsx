@@ -5,6 +5,8 @@ import { CartContext } from './Routes'
 
 function Card({ title, price, image, id, description }) {
     const { addToCart, products } = useContext(CartContext)
+    let displayTitle = title;
+    displayTitle.length > 60 ? displayTitle = String(title).substring(0, 59) + "..." : null
 
     return (
 
@@ -12,9 +14,9 @@ function Card({ title, price, image, id, description }) {
             <Link className='' to={`/store/${id}`} state={{ title, price, image, id, description }}>
                 <img src={image} className='h-[50%] px-4 py-2 mx-auto' />
 
-                <div className=' w-full h-[32%] bg-white pt-3 flex flex-col justify-between items-center text-center'>
+                <div className=' w-full h-[32%] bg-white pt-3 flex flex-col justify-between items-center text-center px-3'>
 
-                    <h1 className='w-full text-base font-semibold'>{title}</h1>
+                    <h1 className='w-full text-base font-semibold'>{displayTitle}</h1>
                     <h1 className='text-xl font-bold text-green-500 left-4 bottom-4'>{price}$</h1>
                 </div>
             </Link>

@@ -22,7 +22,7 @@ function Product({ setCart, products, cart, updateTotal }) {
                     <h2 className='text-2xl font-bold text-green-500'>{state.price}$</h2>
                 </div>
                 <p className='py-6'>{state.description}</p>
-                <button type='button' onClick={() => addToCart(products[state.id - 1])} className=' min-w-[200px] min-h-[80px] w-[10vw] h-[4vw] rounded-2xl border-4 border-black bg-white font-bold text-xl'>Add to cart</button>
+                <button type='button' onClick={() => addToCart(products[state.id - 1])} className=' min-w-[200px] min-h-[80px] w-[10vw] h-[4vw] rounded-2xl border-4 border-black bg-white font-bold text-xl hover:bg-black hover:text-white duration-300'>Add to cart</button>
 
             </div>
         </motion.div>
