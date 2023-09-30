@@ -1,7 +1,6 @@
 import { React, useState } from 'react'
 import "./Navbar.css"
 import { Link } from 'react-router-dom'
-import ShoppingCart from './ShoppingCart';
 
 function Navbar({ setActiveCart, activeCart, cart, total, updateTotal }) {
 
